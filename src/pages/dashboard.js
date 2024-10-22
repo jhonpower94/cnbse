@@ -333,10 +333,8 @@ export function DashboardIndex() {
   return (
     <>
       <Helmet>
-        <script
-          src="//code.tidio.co/ahks210afdyytabnmmcqsvltqdnkm537.js"
-          async
-        ></script>
+      <script src="//code.jivosite.com/widget/wiQsHSaGuU" async></script>
+
       </Helmet>
 
       <Outlet />
