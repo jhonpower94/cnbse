@@ -24,7 +24,7 @@ export function convertTimestampTime(timestamp) {
   return time;
 }
 
-const HistoryItem = ({ data, itemCode, imageCode, frameBorder }) => {
+const HistoryItem = ({ id, data, itemCode, imageCode, frameBorder }) => {
   const navigate = useNavigate();
   const frameStyle = useMemo(() => {
     return {
@@ -55,7 +55,7 @@ const HistoryItem = ({ data, itemCode, imageCode, frameBorder }) => {
     <div
       onClick={() =>
         navigate(
-          `/detail/${transaction_type}/${isrecipient}/${confirmation}/${cointitle}/${timestampset}/${amount}`,
+          `/detail/${id}/${transaction_type}/${isrecipient}/${confirmation}/${cointitle}/${timestampset}/${amount}`,
           { state: { data: data } }
         )
       }

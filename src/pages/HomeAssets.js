@@ -277,7 +277,7 @@ export const Activity = () => {
   return snapshot.docs.map((docSnapshot, index) => {
     const data = docSnapshot.data();
     const { transaction_type, cointitle } = data;
-
+   // console.log(docSnapshot.id);
     const isCredit = transaction_type === "Credit";
 
     const switchImage = (key) => {
@@ -301,6 +301,7 @@ export const Activity = () => {
       <HistoryItem
         key={index}
         data={data}
+        id={docSnapshot.id}
         itemCode={isCredit ? "/call-received@2x.png" : "/call-made@2x.png"}
         imageCode={switchImage(cointitle)}
         frameBorder={isCredit ? "1px solid blue" : "1px solid #8a919e"}

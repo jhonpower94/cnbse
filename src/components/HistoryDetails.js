@@ -9,13 +9,17 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { CurrencyFormat } from "../config/services";
 import "./styles.module.css";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import HeaderBackButton from "./HeaderBackButton";
+import { useEffect } from "react";
 
 export function TransDetailDailog() {
+  const location = useLocation();
+
   const theme = useTheme();
 
   let {
+    id,
     transaction_type,
     amount,
     cointitle,
@@ -27,6 +31,10 @@ export function TransDetailDailog() {
   const isCredit = transaction_type === "Credit";
   const isrecipient = isCredit ? "" : recipient;
   const isConfirmation = confirmation < 3;
+
+  useEffect(() => {
+    console.log(id);
+  });
 
   return (
     <div>
@@ -85,6 +93,26 @@ export function TransDetailDailog() {
               </ListItemSecondaryAction>
             </ListItem>
           ))}
+          <ListItem>
+            <ListItemText
+              primary={"Txid"}
+              secondary={"Transaction id"}
+              primaryTypographyProps={{ variant: "h6" }}
+            />
+            <ListItemSecondaryAction>
+              <Typography
+                variant="h5"
+                sx={{
+                  width: 180,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {id}
+              </Typography>
+            </ListItemSecondaryAction>
+          </ListItem>
         </List>
       </div>
     </div>
