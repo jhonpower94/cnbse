@@ -61,8 +61,8 @@ export function TransDetailDailog() {
               primary: "Status",
               secondary: isConfirmation ? <CircularProgress size={20} /> : "",
               secondaryaction: isCredit
-                ? "3 Confirmation"
-                : `${confirmation} Confirmation`,
+                ? "3/3 Confirmation"
+                : `${confirmation}/3 Confirmation`,
             },
             {
               primary: "Amount",
