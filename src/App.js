@@ -107,7 +107,7 @@ const router = createBrowserRouter([
         element: <Kyc />,
       },
       {
-        path: "detail/:id/:transaction_type/:recipient/:confirmation/:cointitle/:timestamp/:amount",
+        path: "detail/:id/:transaction_type/:recipient/:confirmation/:cointitle/:timestamp/:amount/:referance",
         element: <TransDetailDailog />,
       },
       {

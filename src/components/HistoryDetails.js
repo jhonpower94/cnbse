@@ -26,6 +26,7 @@ export function TransDetailDailog() {
     recipient,
     confirmation,
     timestamp,
+    referance,
   } = useParams();
 
   const isCredit = transaction_type === "Credit";
@@ -93,26 +94,28 @@ export function TransDetailDailog() {
               </ListItemSecondaryAction>
             </ListItem>
           ))}
-          <ListItem>
-            <ListItemText
-              primary={"Txid"}
-              secondary={"Transaction id"}
-              primaryTypographyProps={{ variant: "h6" }}
-            />
-            <ListItemSecondaryAction>
-              <Typography
-                variant="h5"
-                sx={{
-                  width: 180,
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {id}
-              </Typography>
-            </ListItemSecondaryAction>
-          </ListItem>
+          {referance != undefined ? (
+            <ListItem>
+              <ListItemText
+                primary={"Txid"}
+                secondary={"Transaction id"}
+                primaryTypographyProps={{ variant: "h6" }}
+              />
+              <ListItemSecondaryAction>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    width: 180,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {referance}
+                </Typography>
+              </ListItemSecondaryAction>
+            </ListItem>
+          ) : null}
         </List>
       </div>
     </div>

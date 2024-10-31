@@ -39,6 +39,7 @@ const HistoryItem = ({ id, data, itemCode, imageCode, frameBorder }) => {
     timestamp,
     confirmation,
     cointitle,
+    referance
   } = data;
   const isCredit = transaction_type === "Credit";
   const isPending = confirmation < 3;
@@ -55,7 +56,7 @@ const HistoryItem = ({ id, data, itemCode, imageCode, frameBorder }) => {
     <div
       onClick={() =>
         navigate(
-          `/detail/${id}/${transaction_type}/${isrecipient}/${confirmation}/${cointitle}/${timestampset}/${amount}`,
+          `/detail/${id}/${transaction_type}/${isrecipient}/${confirmation}/${cointitle}/${timestampset}/${amount}/${referance}`,
           { state: { data: data } }
         )
       }
