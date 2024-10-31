@@ -94,7 +94,7 @@ export function TransDetailDailog() {
               </ListItemSecondaryAction>
             </ListItem>
           ))}
-          {referance != undefined ? (
+          {referance === undefined ?  null : (
             <ListItem>
               <ListItemText
                 primary={"Txid"}
@@ -115,7 +115,7 @@ export function TransDetailDailog() {
                 </Typography>
               </ListItemSecondaryAction>
             </ListItem>
-          ) : null}
+          ) }
         </List>
       </div>
     </div>
